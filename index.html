@@ -1,12 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Website</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+            text-align: center;
+        }
+        header {
+            background: #4a90e2;
+            color: white;
+            padding: 40px 20px;
+        }
+        section {
+            padding: 30px;
+        }
+        button {
+            background: #4a90e2;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #417fc1;
+            cursor: pointer;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Welcome to my website!</h1>
-    <p>This is hosted via GitHub Pages.</p>
-  <script>window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}</script><script id="zsiqscript" src="https://salesiq.zohopublic.com/widget?wc=siq686e3454aed007cab9f8a6ab8daaadc8" defer></script>
+
+    <header>
+        <h1>Welcome to My Website</h1>
+        <p>This is a simple one-page site created for my bot integration.</p>
+    </header>
+
+    <section>
+        <h2>Hello!</h2>
+        <p>This is my first website hosted on GitHub Pages.</p>
+        <button onclick="alert('Thanks for visiting!')">Click Me</button>
+    </section>
+
+    <!-- 🔽 Add your bot script here before closing body -->
+    <!-- Example:
+    <script> ... </script>
+    -->
+<script>window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}</script><script id="zsiqscript" src="https://salesiq.zohopublic.com/widget?wc=siq686e3454aed007cab9f8a6ab8daaadc8" defer></script>
 </body>
 </html>
-
