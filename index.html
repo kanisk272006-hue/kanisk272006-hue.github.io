@@ -1,58 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Website</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome | Professional</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* --- 1. RESET & VARIABLES --- */
+        * {
             margin: 0;
             padding: 0;
-            background: #f5f5f5;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #007bff;
+            --hover-color: #0056b3;
+            --text-light: #ffffff;
+            --overlay-color: rgba(0, 0, 0, 0.65);
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* --- 2. BACKGROUND & HERO SECTION --- */
+        .hero {
+            /* Replace the URL below to change the background image */
+            background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
             text-align: center;
         }
-        header {
-            background: #4a90e2;
+
+        /* Dark overlay to make text readable */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: var(--overlay-color);
+        }
+
+        /* Content Wrapper */
+        .content {
+            position: relative;
+            z-index: 2;
+            color: var(--text-light);
+            padding: 20px;
+            max-width: 800px;
+            animation: fadeIn 1.5s ease;
+        }
+
+        /* --- 3. NAVIGATION --- */
+        nav {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-light);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-light);
+        }
+
+        /* --- 4. TYPOGRAPHY & BUTTONS --- */
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
             color: white;
-            padding: 40px 20px;
+            border: 2px solid var(--primary-color);
         }
-        section {
-            padding: 30px;
+        .btn-primary:hover {
+            background-color: var(--hover-color);
+            border-color: var(--hover-color);
+            transform: translateY(-2px);
         }
-        button {
-            background: #4a90e2;
+
+        .btn-secondary {
+            background-color: transparent;
             color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
+            border: 2px solid white;
         }
-        button:hover {
-            background: #417fc1;
-            cursor: pointer;
+        .btn-secondary:hover {
+            background-color: white;
+            color: black;
+            transform: translateY(-2px);
+        }
+
+        /* --- 5. ANIMATIONS & MOBILE --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            p { font-size: 1rem; }
+            nav { padding: 20px; flex-direction: column; }
+            .nav-links { margin-top: 15px; }
+            .nav-links a { margin: 0 10px; }
+            .btn-container { flex-direction: column; width: 100%; }
+            .btn { width: 100%; display: block; }
         }
     </style>
 </head>
-
 <body>
 
-    <header>
-        <h1>Welcome to My Website</h1>
-        <p>This is a simple one-page site created for my bot integration.</p>
-    </header>
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo">YOUR BRAND</a>
+        <div class="nav-links">
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
 
-    <section>
-        <h2>Hello!</h2>
-        <p>This is my first website hosted on GitHub Pages.</p>
-        <button onclick="alert('Thanks for visiting!')">Click Me</button>
-    </section>
-
-    <!-- 🔽 Add your bot script here before closing body -->
-    <!-- Example:
-    <script> ... </script>
-    -->
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="content">
+            <h1>Welcome to the Future</h1>
+            <p>We provide innovative digital solutions to help your business grow. Professional, reliable, and ready to serve.</p>
+            
+            <div class="btn-container">
+                <a href="#" class="btn btn-primary">Get Started</a>
+                <a href="#" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </div>
 <script>window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}</script><script id="zsiqscript" src="https://salesiq.zohopublic.com/widget?wc=siq116bf2590e2408ecf875edec18b137a14dd1b75283dffc530a45d74e9a0db95f" defer></script>
 </body>
 </html>
